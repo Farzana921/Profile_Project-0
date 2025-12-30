@@ -1,42 +1,257 @@
-#root {
-  max-width: 1280px;
+/* Reset */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+/* Page */
+.page {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.layout {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Top header like screenshot */
+.topHeader {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 20px;
+  padding: 42px 48px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topHeaderInner {
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Avatar */
+.avatarRing {
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  padding: 6px;
+  background: #5b5cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.avatarCircle {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0b1220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 38px;
+}
+
+/* Header text */
+.topHeaderContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profileName {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.profileHandle {
+  margin: 10px 0 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #5b5cff;
+}
+
+/* Header buttons */
+.topHeaderButtons {
+  margin-top: 18px;
+  display: flex;
+  gap: 16px;
+}
+
+.btnHeader {
+  border: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btnHeader.primary {
+  background: #5b5cff;
+  color: #ffffff;
+}
+
+.btnHeader.ghost {
+  background: #eef2ff;
+  color: #3b5bff;
+}
+
+/* Avatar image */
+.avatarImageWrapper {
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Buttons */
+.btn {
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  color: #e5e7eb;
+}
+
+.btn.primary {
+  background: #5b5cff;
+  border-color: #5b5cff;
+  color: white;
+}
+
+.btn.ghost {
+  background: rgba(255,255,255,0.06);
+}
+
+/* Cards */
 .card {
-  padding: 2em;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
 }
 
-.read-the-docs {
-  color: #888;
+/* Stats row */
+.statsGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.statTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statTitle {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
+}
+
+.statIcon {
+  opacity: 0.9;
+}
+
+.statValue {
+  margin-top: 12px;
+  font-size: 40px;
+  font-weight: 900;
+  color: #6d6bff;
+}
+
+.statFooter {
+  margin: 10px 0 0 0;
+  color: #a7b0c0;
+  font-size: 13px;
+}
+
+/* Bottom area */
+.bottomGrid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+}
+
+.cardTitle {
+  margin: 0 0 14px 0;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+/* Rows */
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rowLabel {
+  color: #93a4b7;
+  font-size: 13px;
+}
+
+.rowValue {
+  color: #e5e7eb;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: right;
+}
+
+/* Status/verified */
+.pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(34,197,94,0.15);
+  border: 1px solid rgba(34,197,94,0.35);
+  color: #34d399;
+  font-weight: 800;
+}
+
+.verified {
+  color: #8b5cf6;
+  font-weight: 900;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+  .profileName {
+    font-size: 26px;
+  }
 }
